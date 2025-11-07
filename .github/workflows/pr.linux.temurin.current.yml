@@ -37,10 +37,12 @@ jobs:
         id: project_is_snapshot
         run: java .github/workflows/Tools.java ShowProjectIsSnapshot pom.xml >> "$GITHUB_OUTPUT"
 
-      - name: Configure Vulkan
-        uses: NcStudios/VulkanCI@1a5db3ebde578c503b1d7f8df007e42a7367224c
+      - name: Prepare Vulkan SDK
+        uses: humbletim/setup-vulkan-sdk@c25f41106918cde0bf347e6f201277392b3a9e9d
         with:
-          sdkVersion: 1.4.309.0
+          vulkan-query-version: 1.4.304.1
+          vulkan-components: Vulkan-Headers, Vulkan-Loader
+          vulkan-use-cache: true
 
       - name: Install RenderDoc
         run: sudo apt install renderdoc
