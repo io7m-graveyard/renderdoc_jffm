@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef uint32_t (*pRENDERDOC_EndFrameCapture)(RENDERDOC_DevicePointer, RENDERDOC_WindowHandle)
  * }
  */
-public class pRENDERDOC_EndFrameCapture {
+public final class pRENDERDOC_EndFrameCapture {
 
-    pRENDERDOC_EndFrameCapture() {
+    private pRENDERDOC_EndFrameCapture() {
         // Should not be called directly
     }
 
@@ -58,9 +58,11 @@ public class pRENDERDOC_EndFrameCapture {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,MemorySegment device, MemorySegment wndHandle) {
+    public static int invoke(MemorySegment funcPtr, MemorySegment device, MemorySegment wndHandle) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, device, wndHandle);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

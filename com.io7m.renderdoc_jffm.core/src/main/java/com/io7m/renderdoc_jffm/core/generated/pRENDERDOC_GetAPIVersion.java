@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_GetAPIVersion)(int *, int *, int *)
  * }
  */
-public class pRENDERDOC_GetAPIVersion {
+public final class pRENDERDOC_GetAPIVersion {
 
-    pRENDERDOC_GetAPIVersion() {
+    private pRENDERDOC_GetAPIVersion() {
         // Should not be called directly
     }
 
@@ -58,9 +58,11 @@ public class pRENDERDOC_GetAPIVersion {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment major, MemorySegment minor, MemorySegment patch) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment major, MemorySegment minor, MemorySegment patch) {
         try {
              DOWN$MH.invokeExact(funcPtr, major, minor, patch);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

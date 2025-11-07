@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef int (*pRENDERDOC_SetCaptureOptionF32)(RENDERDOC_CaptureOption, float)
  * }
  */
-public class pRENDERDOC_SetCaptureOptionF32 {
+public final class pRENDERDOC_SetCaptureOptionF32 {
 
-    pRENDERDOC_SetCaptureOptionF32() {
+    private pRENDERDOC_SetCaptureOptionF32() {
         // Should not be called directly
     }
 
@@ -58,9 +58,11 @@ public class pRENDERDOC_SetCaptureOptionF32 {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,int opt, float val) {
+    public static int invoke(MemorySegment funcPtr, int opt, float val) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, opt, val);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

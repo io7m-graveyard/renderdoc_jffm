@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_SetCaptureTitle)(const char *)
  * }
  */
-public class pRENDERDOC_SetCaptureTitle {
+public final class pRENDERDOC_SetCaptureTitle {
 
-    pRENDERDOC_SetCaptureTitle() {
+    private pRENDERDOC_SetCaptureTitle() {
         // Should not be called directly
     }
 
@@ -56,9 +56,11 @@ public class pRENDERDOC_SetCaptureTitle {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment title) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment title) {
         try {
              DOWN$MH.invokeExact(funcPtr, title);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

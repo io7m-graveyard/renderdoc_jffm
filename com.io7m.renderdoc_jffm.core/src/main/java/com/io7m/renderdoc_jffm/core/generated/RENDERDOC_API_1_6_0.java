@@ -124,7 +124,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetAPIVersion$LAYOUT;
     }
 
-    private static final long GetAPIVersion$OFFSET = 0;
+    private static final long GetAPIVersion$OFFSET = $LAYOUT.byteOffset(groupElement("GetAPIVersion"));
 
     /**
      * Offset for field:
@@ -168,7 +168,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetCaptureOptionU32$LAYOUT;
     }
 
-    private static final long SetCaptureOptionU32$OFFSET = 8;
+    private static final long SetCaptureOptionU32$OFFSET = $LAYOUT.byteOffset(groupElement("SetCaptureOptionU32"));
 
     /**
      * Offset for field:
@@ -212,7 +212,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetCaptureOptionF32$LAYOUT;
     }
 
-    private static final long SetCaptureOptionF32$OFFSET = 16;
+    private static final long SetCaptureOptionF32$OFFSET = $LAYOUT.byteOffset(groupElement("SetCaptureOptionF32"));
 
     /**
      * Offset for field:
@@ -256,7 +256,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetCaptureOptionU32$LAYOUT;
     }
 
-    private static final long GetCaptureOptionU32$OFFSET = 24;
+    private static final long GetCaptureOptionU32$OFFSET = $LAYOUT.byteOffset(groupElement("GetCaptureOptionU32"));
 
     /**
      * Offset for field:
@@ -300,7 +300,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetCaptureOptionF32$LAYOUT;
     }
 
-    private static final long GetCaptureOptionF32$OFFSET = 32;
+    private static final long GetCaptureOptionF32$OFFSET = $LAYOUT.byteOffset(groupElement("GetCaptureOptionF32"));
 
     /**
      * Offset for field:
@@ -344,7 +344,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetFocusToggleKeys$LAYOUT;
     }
 
-    private static final long SetFocusToggleKeys$OFFSET = 40;
+    private static final long SetFocusToggleKeys$OFFSET = $LAYOUT.byteOffset(groupElement("SetFocusToggleKeys"));
 
     /**
      * Offset for field:
@@ -388,7 +388,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetCaptureKeys$LAYOUT;
     }
 
-    private static final long SetCaptureKeys$OFFSET = 48;
+    private static final long SetCaptureKeys$OFFSET = $LAYOUT.byteOffset(groupElement("SetCaptureKeys"));
 
     /**
      * Offset for field:
@@ -432,7 +432,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetOverlayBits$LAYOUT;
     }
 
-    private static final long GetOverlayBits$OFFSET = 56;
+    private static final long GetOverlayBits$OFFSET = $LAYOUT.byteOffset(groupElement("GetOverlayBits"));
 
     /**
      * Offset for field:
@@ -476,7 +476,7 @@ public class RENDERDOC_API_1_6_0 {
         return MaskOverlayBits$LAYOUT;
     }
 
-    private static final long MaskOverlayBits$OFFSET = 64;
+    private static final long MaskOverlayBits$OFFSET = $LAYOUT.byteOffset(groupElement("MaskOverlayBits"));
 
     /**
      * Offset for field:
@@ -520,7 +520,7 @@ public class RENDERDOC_API_1_6_0 {
         return Shutdown$LAYOUT;
     }
 
-    private static final long Shutdown$OFFSET = 72;
+    private static final long Shutdown$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$640:3"), groupElement("Shutdown"));
 
     /**
      * Offset for field:
@@ -564,7 +564,7 @@ public class RENDERDOC_API_1_6_0 {
         return RemoveHooks$LAYOUT;
     }
 
-    private static final long RemoveHooks$OFFSET = 72;
+    private static final long RemoveHooks$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$640:3"), groupElement("RemoveHooks"));
 
     /**
      * Offset for field:
@@ -608,7 +608,7 @@ public class RENDERDOC_API_1_6_0 {
         return UnloadCrashHandler$LAYOUT;
     }
 
-    private static final long UnloadCrashHandler$OFFSET = 80;
+    private static final long UnloadCrashHandler$OFFSET = $LAYOUT.byteOffset(groupElement("UnloadCrashHandler"));
 
     /**
      * Offset for field:
@@ -652,7 +652,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetLogFilePathTemplate$LAYOUT;
     }
 
-    private static final long SetLogFilePathTemplate$OFFSET = 88;
+    private static final long SetLogFilePathTemplate$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$649:3"), groupElement("SetLogFilePathTemplate"));
 
     /**
      * Offset for field:
@@ -696,7 +696,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetCaptureFilePathTemplate$LAYOUT;
     }
 
-    private static final long SetCaptureFilePathTemplate$OFFSET = 88;
+    private static final long SetCaptureFilePathTemplate$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$649:3"), groupElement("SetCaptureFilePathTemplate"));
 
     /**
      * Offset for field:
@@ -740,7 +740,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetLogFilePathTemplate$LAYOUT;
     }
 
-    private static final long GetLogFilePathTemplate$OFFSET = 96;
+    private static final long GetLogFilePathTemplate$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$656:3"), groupElement("GetLogFilePathTemplate"));
 
     /**
      * Offset for field:
@@ -784,7 +784,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetCaptureFilePathTemplate$LAYOUT;
     }
 
-    private static final long GetCaptureFilePathTemplate$OFFSET = 96;
+    private static final long GetCaptureFilePathTemplate$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$656:3"), groupElement("GetCaptureFilePathTemplate"));
 
     /**
      * Offset for field:
@@ -828,7 +828,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetNumCaptures$LAYOUT;
     }
 
-    private static final long GetNumCaptures$OFFSET = 104;
+    private static final long GetNumCaptures$OFFSET = $LAYOUT.byteOffset(groupElement("GetNumCaptures"));
 
     /**
      * Offset for field:
@@ -872,7 +872,7 @@ public class RENDERDOC_API_1_6_0 {
         return GetCapture$LAYOUT;
     }
 
-    private static final long GetCapture$OFFSET = 112;
+    private static final long GetCapture$OFFSET = $LAYOUT.byteOffset(groupElement("GetCapture"));
 
     /**
      * Offset for field:
@@ -916,7 +916,7 @@ public class RENDERDOC_API_1_6_0 {
         return TriggerCapture$LAYOUT;
     }
 
-    private static final long TriggerCapture$OFFSET = 120;
+    private static final long TriggerCapture$OFFSET = $LAYOUT.byteOffset(groupElement("TriggerCapture"));
 
     /**
      * Offset for field:
@@ -960,7 +960,7 @@ public class RENDERDOC_API_1_6_0 {
         return IsRemoteAccessConnected$LAYOUT;
     }
 
-    private static final long IsRemoteAccessConnected$OFFSET = 128;
+    private static final long IsRemoteAccessConnected$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$671:3"), groupElement("IsRemoteAccessConnected"));
 
     /**
      * Offset for field:
@@ -1004,7 +1004,7 @@ public class RENDERDOC_API_1_6_0 {
         return IsTargetControlConnected$LAYOUT;
     }
 
-    private static final long IsTargetControlConnected$OFFSET = 128;
+    private static final long IsTargetControlConnected$OFFSET = $LAYOUT.byteOffset(groupElement("$anon$671:3"), groupElement("IsTargetControlConnected"));
 
     /**
      * Offset for field:
@@ -1048,7 +1048,7 @@ public class RENDERDOC_API_1_6_0 {
         return LaunchReplayUI$LAYOUT;
     }
 
-    private static final long LaunchReplayUI$OFFSET = 136;
+    private static final long LaunchReplayUI$OFFSET = $LAYOUT.byteOffset(groupElement("LaunchReplayUI"));
 
     /**
      * Offset for field:
@@ -1092,7 +1092,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetActiveWindow$LAYOUT;
     }
 
-    private static final long SetActiveWindow$OFFSET = 144;
+    private static final long SetActiveWindow$OFFSET = $LAYOUT.byteOffset(groupElement("SetActiveWindow"));
 
     /**
      * Offset for field:
@@ -1136,7 +1136,7 @@ public class RENDERDOC_API_1_6_0 {
         return StartFrameCapture$LAYOUT;
     }
 
-    private static final long StartFrameCapture$OFFSET = 152;
+    private static final long StartFrameCapture$OFFSET = $LAYOUT.byteOffset(groupElement("StartFrameCapture"));
 
     /**
      * Offset for field:
@@ -1180,7 +1180,7 @@ public class RENDERDOC_API_1_6_0 {
         return IsFrameCapturing$LAYOUT;
     }
 
-    private static final long IsFrameCapturing$OFFSET = 160;
+    private static final long IsFrameCapturing$OFFSET = $LAYOUT.byteOffset(groupElement("IsFrameCapturing"));
 
     /**
      * Offset for field:
@@ -1224,7 +1224,7 @@ public class RENDERDOC_API_1_6_0 {
         return EndFrameCapture$LAYOUT;
     }
 
-    private static final long EndFrameCapture$OFFSET = 168;
+    private static final long EndFrameCapture$OFFSET = $LAYOUT.byteOffset(groupElement("EndFrameCapture"));
 
     /**
      * Offset for field:
@@ -1268,7 +1268,7 @@ public class RENDERDOC_API_1_6_0 {
         return TriggerMultiFrameCapture$LAYOUT;
     }
 
-    private static final long TriggerMultiFrameCapture$OFFSET = 176;
+    private static final long TriggerMultiFrameCapture$OFFSET = $LAYOUT.byteOffset(groupElement("TriggerMultiFrameCapture"));
 
     /**
      * Offset for field:
@@ -1312,7 +1312,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetCaptureFileComments$LAYOUT;
     }
 
-    private static final long SetCaptureFileComments$OFFSET = 184;
+    private static final long SetCaptureFileComments$OFFSET = $LAYOUT.byteOffset(groupElement("SetCaptureFileComments"));
 
     /**
      * Offset for field:
@@ -1356,7 +1356,7 @@ public class RENDERDOC_API_1_6_0 {
         return DiscardFrameCapture$LAYOUT;
     }
 
-    private static final long DiscardFrameCapture$OFFSET = 192;
+    private static final long DiscardFrameCapture$OFFSET = $LAYOUT.byteOffset(groupElement("DiscardFrameCapture"));
 
     /**
      * Offset for field:
@@ -1400,7 +1400,7 @@ public class RENDERDOC_API_1_6_0 {
         return ShowReplayUI$LAYOUT;
     }
 
-    private static final long ShowReplayUI$OFFSET = 200;
+    private static final long ShowReplayUI$OFFSET = $LAYOUT.byteOffset(groupElement("ShowReplayUI"));
 
     /**
      * Offset for field:
@@ -1444,7 +1444,7 @@ public class RENDERDOC_API_1_6_0 {
         return SetCaptureTitle$LAYOUT;
     }
 
-    private static final long SetCaptureTitle$OFFSET = 208;
+    private static final long SetCaptureTitle$OFFSET = $LAYOUT.byteOffset(groupElement("SetCaptureTitle"));
 
     /**
      * Offset for field:

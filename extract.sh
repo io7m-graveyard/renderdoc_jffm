@@ -1,6 +1,6 @@
 #!/bin/sh
 
-JEXTRACT_HOME="${HOME}/var/tmp/jextract-22/"
+JEXTRACT_HOME="${HOME}/var/jextract/jextract-25"
 
 exec ${JEXTRACT_HOME}/bin/jextract \
   -l renderdoc \

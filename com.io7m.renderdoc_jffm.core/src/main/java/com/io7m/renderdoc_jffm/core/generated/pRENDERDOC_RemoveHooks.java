@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_RemoveHooks)()
  * }
  */
-public class pRENDERDOC_RemoveHooks {
+public final class pRENDERDOC_RemoveHooks {
 
-    pRENDERDOC_RemoveHooks() {
+    private pRENDERDOC_RemoveHooks() {
         // Should not be called directly
     }
 
@@ -57,6 +57,8 @@ public class pRENDERDOC_RemoveHooks {
     public static void invoke(MemorySegment funcPtr) {
         try {
              DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

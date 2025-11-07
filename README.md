@@ -2,9 +2,9 @@ renderdoc_jffm
 ===
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.io7m.renderdoc_jffm/com.io7m.renderdoc_jffm.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.renderdoc_jffm%22)
-[![Maven Central (snapshot)](https://img.shields.io/nexus/s/com.io7m.renderdoc_jffm/com.io7m.renderdoc_jffm?server=https%3A%2F%2Fs01.oss.sonatype.org&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/renderdoc_jffm/)
+[![Maven Central (snapshot)](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Fcom%2Fio7m%2Frenderdoc_jffm%2Fcom.io7m.renderdoc_jffm%2Fmaven-metadata.xml&style=flat-square)](https://central.sonatype.com/repository/maven-snapshots/com/io7m/renderdoc_jffm/)
 [![Codecov](https://img.shields.io/codecov/c/github/io7m-com/renderdoc_jffm.svg?style=flat-square)](https://codecov.io/gh/io7m-com/renderdoc_jffm)
-![Java Version](https://img.shields.io/badge/22-java?label=java&color=d4e65c)
+![Java Version](https://img.shields.io/badge/25-java?label=java&color=5ce67e)
 
 ![com.io7m.renderdoc_jffm](./src/site/resources/renderdoc_jffm.jpg?raw=true)
 
@@ -52,4 +52,22 @@ setting options and triggering captures.
 The `open()` method will raise an `IOException` with a useful error message
 if the `renderdoc` native library is not present in the current application
 process.
+
+### LD_LIBRARY_PATH
+
+It may be necessary on some systems (notably Fedora Linux) to set the
+`LD_LIBRARY_PATH` environment variable. It seems that some packaging systems
+place `renderdoc` into its own subdirectory under `/lib64`:
+
+```
+$ file /lib64/renderdoc/librenderdoc.so
+/lib64/renderdoc/librenderdoc.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c8dcf24af968317d361ea1bb021f8a5919fefb1f, stripped
+```
+
+The Java FFM API will use the system's default library path, and this tends
+not to contain `/lib64/renderdoc` on those systems.
+
+```
+$ export LD_LIBRARY_PATH=/lib:/lib64:/lib64/renderdoc
+```
 

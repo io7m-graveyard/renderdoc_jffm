@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_UnloadCrashHandler)()
  * }
  */
-public class pRENDERDOC_UnloadCrashHandler {
+public final class pRENDERDOC_UnloadCrashHandler {
 
-    pRENDERDOC_UnloadCrashHandler() {
+    private pRENDERDOC_UnloadCrashHandler() {
         // Should not be called directly
     }
 
@@ -57,6 +57,8 @@ public class pRENDERDOC_UnloadCrashHandler {
     public static void invoke(MemorySegment funcPtr) {
         try {
              DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

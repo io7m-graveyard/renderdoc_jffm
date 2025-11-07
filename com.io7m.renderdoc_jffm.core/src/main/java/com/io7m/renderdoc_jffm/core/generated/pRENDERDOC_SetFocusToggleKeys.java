@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_SetFocusToggleKeys)(RENDERDOC_InputButton *, int)
  * }
  */
-public class pRENDERDOC_SetFocusToggleKeys {
+public final class pRENDERDOC_SetFocusToggleKeys {
 
-    pRENDERDOC_SetFocusToggleKeys() {
+    private pRENDERDOC_SetFocusToggleKeys() {
         // Should not be called directly
     }
 
@@ -57,9 +57,11 @@ public class pRENDERDOC_SetFocusToggleKeys {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment keys, int num) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment keys, int num) {
         try {
              DOWN$MH.invokeExact(funcPtr, keys, num);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

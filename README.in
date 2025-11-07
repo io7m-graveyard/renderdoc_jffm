@@ -36,3 +36,21 @@ setting options and triggering captures.
 The `open()` method will raise an `IOException` with a useful error message
 if the `renderdoc` native library is not present in the current application
 process.
+
+### LD_LIBRARY_PATH
+
+It may be necessary on some systems (notably Fedora Linux) to set the
+`LD_LIBRARY_PATH` environment variable. It seems that some packaging systems
+place `renderdoc` into its own subdirectory under `/lib64`:
+
+```
+$ file /lib64/renderdoc/librenderdoc.so
+/lib64/renderdoc/librenderdoc.so: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=c8dcf24af968317d361ea1bb021f8a5919fefb1f, stripped
+```
+
+The Java FFM API will use the system's default library path, and this tends
+not to contain `/lib64/renderdoc` on those systems.
+
+```
+$ export LD_LIBRARY_PATH=/lib:/lib64:/lib64/renderdoc
+```

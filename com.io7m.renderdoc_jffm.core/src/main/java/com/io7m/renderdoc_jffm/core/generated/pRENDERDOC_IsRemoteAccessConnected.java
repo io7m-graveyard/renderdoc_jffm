@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef pRENDERDOC_IsTargetControlConnected pRENDERDOC_IsRemoteAccessConnected
  * }
  */
-public class pRENDERDOC_IsRemoteAccessConnected {
+public final class pRENDERDOC_IsRemoteAccessConnected {
 
-    pRENDERDOC_IsRemoteAccessConnected() {
+    private pRENDERDOC_IsRemoteAccessConnected() {
         // Should not be called directly
     }
 
@@ -58,6 +58,8 @@ public class pRENDERDOC_IsRemoteAccessConnected {
     public static int invoke(MemorySegment funcPtr) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

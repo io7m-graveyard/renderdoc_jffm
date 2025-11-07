@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_SetCaptureFileComments)(const char *, const char *)
  * }
  */
-public class pRENDERDOC_SetCaptureFileComments {
+public final class pRENDERDOC_SetCaptureFileComments {
 
-    pRENDERDOC_SetCaptureFileComments() {
+    private pRENDERDOC_SetCaptureFileComments() {
         // Should not be called directly
     }
 
@@ -57,9 +57,11 @@ public class pRENDERDOC_SetCaptureFileComments {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment filePath, MemorySegment comments) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment filePath, MemorySegment comments) {
         try {
              DOWN$MH.invokeExact(funcPtr, filePath, comments);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

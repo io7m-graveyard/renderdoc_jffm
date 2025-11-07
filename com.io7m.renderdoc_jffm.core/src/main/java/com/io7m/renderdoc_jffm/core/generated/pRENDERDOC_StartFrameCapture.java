@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_StartFrameCapture)(RENDERDOC_DevicePointer, RENDERDOC_WindowHandle)
  * }
  */
-public class pRENDERDOC_StartFrameCapture {
+public final class pRENDERDOC_StartFrameCapture {
 
-    pRENDERDOC_StartFrameCapture() {
+    private pRENDERDOC_StartFrameCapture() {
         // Should not be called directly
     }
 
@@ -57,9 +57,11 @@ public class pRENDERDOC_StartFrameCapture {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment device, MemorySegment wndHandle) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment device, MemorySegment wndHandle) {
         try {
              DOWN$MH.invokeExact(funcPtr, device, wndHandle);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

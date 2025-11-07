@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef uint32_t (*pRENDERDOC_GetOverlayBits)()
  * }
  */
-public class pRENDERDOC_GetOverlayBits {
+public final class pRENDERDOC_GetOverlayBits {
 
-    pRENDERDOC_GetOverlayBits() {
+    private pRENDERDOC_GetOverlayBits() {
         // Should not be called directly
     }
 
@@ -58,6 +58,8 @@ public class pRENDERDOC_GetOverlayBits {
     public static int invoke(MemorySegment funcPtr) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

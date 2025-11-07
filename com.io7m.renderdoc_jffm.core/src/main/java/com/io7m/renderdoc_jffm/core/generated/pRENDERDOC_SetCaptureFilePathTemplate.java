@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_SetCaptureFilePathTemplate)(const char *)
  * }
  */
-public class pRENDERDOC_SetCaptureFilePathTemplate {
+public final class pRENDERDOC_SetCaptureFilePathTemplate {
 
-    pRENDERDOC_SetCaptureFilePathTemplate() {
+    private pRENDERDOC_SetCaptureFilePathTemplate() {
         // Should not be called directly
     }
 
@@ -56,9 +56,11 @@ public class pRENDERDOC_SetCaptureFilePathTemplate {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment pathtemplate) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment pathtemplate) {
         try {
              DOWN$MH.invokeExact(funcPtr, pathtemplate);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

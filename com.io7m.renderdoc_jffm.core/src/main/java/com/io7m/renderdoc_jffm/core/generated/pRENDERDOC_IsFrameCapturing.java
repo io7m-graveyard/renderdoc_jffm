@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef uint32_t (*pRENDERDOC_IsFrameCapturing)()
  * }
  */
-public class pRENDERDOC_IsFrameCapturing {
+public final class pRENDERDOC_IsFrameCapturing {
 
-    pRENDERDOC_IsFrameCapturing() {
+    private pRENDERDOC_IsFrameCapturing() {
         // Should not be called directly
     }
 
@@ -58,6 +58,8 @@ public class pRENDERDOC_IsFrameCapturing {
     public static int invoke(MemorySegment funcPtr) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

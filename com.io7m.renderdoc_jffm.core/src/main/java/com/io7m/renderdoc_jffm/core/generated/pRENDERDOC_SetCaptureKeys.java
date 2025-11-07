@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef void (*pRENDERDOC_SetCaptureKeys)(RENDERDOC_InputButton *, int)
  * }
  */
-public class pRENDERDOC_SetCaptureKeys {
+public final class pRENDERDOC_SetCaptureKeys {
 
-    pRENDERDOC_SetCaptureKeys() {
+    private pRENDERDOC_SetCaptureKeys() {
         // Should not be called directly
     }
 
@@ -57,9 +57,11 @@ public class pRENDERDOC_SetCaptureKeys {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment keys, int num) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment keys, int num) {
         try {
              DOWN$MH.invokeExact(funcPtr, keys, num);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

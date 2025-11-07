@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef pRENDERDOC_SetCaptureFilePathTemplate pRENDERDOC_SetLogFilePathTemplate
  * }
  */
-public class pRENDERDOC_SetLogFilePathTemplate {
+public final class pRENDERDOC_SetLogFilePathTemplate {
 
-    pRENDERDOC_SetLogFilePathTemplate() {
+    private pRENDERDOC_SetLogFilePathTemplate() {
         // Should not be called directly
     }
 
@@ -56,9 +56,11 @@ public class pRENDERDOC_SetLogFilePathTemplate {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static void invoke(MemorySegment funcPtr,MemorySegment _x0) {
+    public static void invoke(MemorySegment funcPtr, MemorySegment _x0) {
         try {
              DOWN$MH.invokeExact(funcPtr, _x0);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

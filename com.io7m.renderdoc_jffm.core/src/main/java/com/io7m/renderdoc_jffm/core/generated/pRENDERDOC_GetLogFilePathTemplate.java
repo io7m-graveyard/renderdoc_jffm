@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef pRENDERDOC_GetCaptureFilePathTemplate pRENDERDOC_GetLogFilePathTemplate
  * }
  */
-public class pRENDERDOC_GetLogFilePathTemplate {
+public final class pRENDERDOC_GetLogFilePathTemplate {
 
-    pRENDERDOC_GetLogFilePathTemplate() {
+    private pRENDERDOC_GetLogFilePathTemplate() {
         // Should not be called directly
     }
 
@@ -58,6 +58,8 @@ public class pRENDERDOC_GetLogFilePathTemplate {
     public static MemorySegment invoke(MemorySegment funcPtr) {
         try {
             return (MemorySegment) DOWN$MH.invokeExact(funcPtr);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }

@@ -17,9 +17,9 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  * typedef uint32_t (*pRENDERDOC_LaunchReplayUI)(uint32_t, const char *)
  * }
  */
-public class pRENDERDOC_LaunchReplayUI {
+public final class pRENDERDOC_LaunchReplayUI {
 
-    pRENDERDOC_LaunchReplayUI() {
+    private pRENDERDOC_LaunchReplayUI() {
         // Should not be called directly
     }
 
@@ -58,9 +58,11 @@ public class pRENDERDOC_LaunchReplayUI {
     /**
      * Invoke the upcall stub {@code funcPtr}, with given parameters
      */
-    public static int invoke(MemorySegment funcPtr,int connectTargetControl, MemorySegment cmdline) {
+    public static int invoke(MemorySegment funcPtr, int connectTargetControl, MemorySegment cmdline) {
         try {
             return (int) DOWN$MH.invokeExact(funcPtr, connectTargetControl, cmdline);
+        } catch (Error | RuntimeException ex) {
+            throw ex;
         } catch (Throwable ex$) {
             throw new AssertionError("should not reach here", ex$);
         }
