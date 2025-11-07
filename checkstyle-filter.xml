@@ -13,6 +13,8 @@
             checks=".*"/>
   <suppress files="renderdoc_app_h.java"
             checks=".*"/>
+  <suppress files="renderdoc_app_h*"
+            checks=".*"/>
 
   <suppress files="RenderDoc.java"
             checks="ExecutableStatementCount"/>
