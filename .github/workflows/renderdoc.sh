@@ -8,7 +8,7 @@ EOF
 ) > renderdoc.tar.gz.sha256
 
 wget -O renderdoc.tar.gz "https://renderdoc.org/stable/${RENDERDOC_VERSION}/renderdoc_${RENDERDOC_VERSION}.tar.gz"
-sha256 -c renderdoc.tar.gz.sha256
+sha256sum -c renderdoc.tar.gz.sha256
 tar -x -z -f renderdoc.tar.gz --strip-components=2 "renderdoc_${RENDERDOC_VERSION}/lib/librenderdoc.so"
 rm -f renderdoc.tar.gz
 rm -f renderdoc.tar.gz.sig
