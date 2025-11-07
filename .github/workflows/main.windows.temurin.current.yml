@@ -44,9 +44,7 @@ jobs:
           cache: true
 
       - name: Install RenderDoc
-        run: choco install renderdoc -y
-      - name: Check RenderDoc
-        run: renderdoccmd.exe --version
+        run: .\.github\workflows\renderdoc.ps1
 
       - name: Build
         env:
