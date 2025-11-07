@@ -42,6 +42,11 @@ jobs:
         with:
           sdkVersion: 1.4.309.0
 
+      - name: Install RenderDoc
+        run: choco install renderdoc -y
+      - name: Check RenderDoc
+        run: renderdoccmd.exe --version
+
       - name: Build
         env:
           XOANON_REALLY_USE_LOCAL_DISPLAY: true

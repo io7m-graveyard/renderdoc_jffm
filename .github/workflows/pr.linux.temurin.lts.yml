@@ -42,6 +42,9 @@ jobs:
         with:
           sdkVersion: 1.4.309.0
 
+      - name: Install RenderDoc
+        run: sudo apt install renderdoc
+
       - name: Build
         env:
           XOANON_REALLY_USE_LOCAL_DISPLAY: true
