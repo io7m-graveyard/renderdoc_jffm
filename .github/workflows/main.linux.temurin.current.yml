@@ -43,8 +43,10 @@ jobs:
           version: 1.4.328.1
           cache: true
 
+      - name: Download RenderDoc
+        run: .github/workflows/renderdoc.sh
       - name: Install RenderDoc
-        run: sudo apt install librenderdoc
+        run: sudo mv librenderdoc.so /usr/lib/librenderdoc.so
 
       - name: Build
         env:
